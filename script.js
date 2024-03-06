@@ -1,11 +1,35 @@
-(function (w, d, t, f) {
-    w[f] = w[f] || function (c, k, n) {
-        s = w[f], k = s['k'] = (s['k'] || (k ? ('&k=' + k) : ''));
-        s['c'] = c = (c instanceof Array) ? c : [c];
-        s['n'] = n = n || 0;
-        L = d.createElement(t), e = d.getElementsByTagName(t)[0];
-        L.async = 1;
-        L.src = '//feed.aqicn.org/feed/' + (c[n].city) + '/' + (c[n].lang || '') + '/feed.v1.js?n=' + n + k;
-        e.parentNode.insertBefore(L, e);
-    };
-})(window, document, 'script', '_aqiFeed');
+
+
+
+var myapikey = "f09a8b987378f5c12242add6b4dd73f6243f9a8b";
+var locationinput = $("#location");
+var searchbtn = $("#search");
+var aqi = $("#aqi");
+var pm25 = $("#pm25");
+
+// Event listener for search button click
+searchbtn.on("click", function() {
+    var location = locationinput.val();
+    console.log(location)
+
+    // Fetch current overall AQI data using Waqi API
+    fetch(`https://api.waqi.info/feed/${location}/?token=${myapikey}`)
+    .then(function(resp) {
+        return resp.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        aqi.text(data.data.aqi);
+    });
+    
+     // Fetch current PM25 data using Waqi API
+     fetch(`https://api.waqi.info/feed/${location}/?token=${myapikey}`)
+     .then(function(resp) {
+         return resp.json();
+     })
+     .then(function(data) {
+         console.log(data);
+         pm25.text(data.data.iaqi.pm25.v);
+     });
+});
+
