@@ -2,9 +2,9 @@
 var myapikey = "f09a8b987378f5c12242add6b4dd73f6243f9a8b";
 var locationinput = $("#location");
 var searchbtn = $("#search");
-var pollutant1 = $("#pol1");
-var pollutant2 = $("#pol2");
-var pollutant3 = $("#pol3");
+var pollutant1 = $("#polutant1");
+var pollutant2 = $("#polutant2");
+var pollutant3 = $("#polutant3");
 
 // Event listener for search button click
 searchbtn.on("click", function() {
@@ -21,7 +21,7 @@ searchbtn.on("click", function() {
     })
     .then(function(data) {
         console.log(data.data);
-
+     // Check statement to look for the data using element name and see if it exists for current location
         if (data.data && data.data.iaqi) {
             displayPollutant("pm25", pollutant1, data.data.iaqi);
             displayPollutant("so2", pollutant2, data.data.iaqi);
@@ -37,6 +37,6 @@ function displayPollutant(pollutantKey, element, iaqiData) {
     if (iaqiData[pollutantKey]) {
         element.text(iaqiData[pollutantKey].v);
     } else {
-        element.text(pollutantKey + " Data Not Available");
+        element.text(pollutantKey + " Level not Detected");
     }
 }
