@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- added google font here via @import-->
-    
-    <title> Welcome | AirUV.com </title>
+   <title> Welcome | AirUV.com </title>
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="script.js">
   </head>
 
 
   <body>
     <!-- Start Top Bar -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="menu">
@@ -32,52 +33,58 @@
     </div>
     <!-- End Top Bar -->
 
-
+  
 
 
 
     <div class="callout large">
       <div class="row column text-center">
-        <h1><b> Breathe Easy, Live Safe </b></h1>
+        <h1> Breathe Easy, Live Safe </h1>
         <p class="lead"><i> Your Source for Up-to-Date Air Quality & UV Levels </i></p>
-
+        <!-- Search Form and Button -->
+        <input id="location" type="text">
+    <button id="search">SEARCH</button>
+              
+          </div>
+        </div>
+        
+    </div>
+    <div id="search-history-container" class="row m-0 search-history-container">       
 <hr>
 
+<!-- Start of APIs -->
+
+<section>
 
 
 <h3> Air Quality & Main Pollutants </h3>
 <!-- Placeholder to insert Air Quality API here // When done remove placeholder -->
 
+<p>PM25: <span id="PM25"></span></p>
+<p>SO2: <span id="SO2"></span></p>
+<p>NO2: <span id="NO2"></span></p>
 
 
-
-
-<img class="thumbnail" src="https://placehold.it/1200x150">
-
-
-
-<h3> UV Checker & Cloud Cover</h3>
 <!-- Insert UV Checker here // When done remove placeholder -->
+<h3>UV Checker & Cloud Cover</h3>
 
 
 
 
 
-<!-- Placeholder to insert UV Checker API here // When done remove placeholder -->
+          <!--  -->
+<p>Current UV Index: <span id="uv-Index"></span></p>
+<p>Clouds Index: <span id="clouds-Index"></span></p>
+<p></p>
+<p>Max Temp: <span id="max-temp"></span></p>
+
+    <div id="UV-Index"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/script.js"></script>
+</main>
 
 
-
-
-<img class="thumbnail" src="https://placehold.it/1200x150">
-
-
-
-<h3> Daily Red/Green checker </h3>
-<!-- Placeholder to insert UV Checker API here // When done remove placeholder -->
-
-
-
-<img class="thumbnail" src="https://placehold.it/1200x150">
 
 
 
@@ -188,15 +195,10 @@
         <a href="mailto: Raul@breatheeasy.com">Contact Us</a>
     
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script.js"></script>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-  
-      //test
+      <!-- Test -->
     </script>
   </body>
 </html>
-
-
-
