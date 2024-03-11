@@ -1,48 +1,38 @@
+var apiKey = "1b18ce13c84e21faafb19c931bb29331";
+var currentUvindex = $("#uv-Index");
+var locationInput = $("#location");
+var cloudsIndex = $("#clouds-Index");
+var maxTemp = $("#max-temp");
+var city = "";
 
-// var myUvKey = 
-// var locationInput = $("#location");
-// var searchbtn = $("#search");
-// var presentDay = $("#city-one");
-
-// searchbtn.on("click", function() {
-//     var location = locationInput.val();
-
-//     //fetch using API 
-//     fetch("");
-//     .then(function(resp) {
-//         return resp.jason();
-//     })
-//     .then(function(data) {
-//         console.log(data);
-//         presentDay.html(${});
-
-//     })
-
-    
-// }
-var cityKey = []
-var apiKey =  "1b18ce13c84e21faafb19c931bb29331"
-
-
-fetch ("https://api.openweathermap.org/data/2.5/onecall?lat="${cityLat}"&lon="${cityLon}"&exclude=minutely,hourly,alerts&units=imperial&appid="${apiKey}")
-.then(function(response){
-    return response.json();
-
-}).then (function(location){
+$("#search").on("click", function() {
+    var location = locationInput.val();
     console.log(location);
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
-
-    .then(function(response){
-
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=imperial`)
+    .then(function(response) {
         return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        currentUvindex.text(data.main.currentUvindex); // Access the temperature from the response data
+        cloudsIndex.text(data.clouds.all); // Access the cloud coverage from the response data
+        maxTemp.text(data.main.temp_max + " F ");
+        
+    }) 
 
-    }).then (function(data) {
-        console.log(data[0].UVIndex);
-        console.log(data[0].UVIndexText);
+    .catch(function(error) {
+        console.log("Error fetching data:", error);
     });
-
 });
-//Reference in class // 18-19
 
-
+function UVIndex(ln,lt){
+    //lets build the url for uvindex.
+    var uvqURL="https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey+"&lat="+lt+"&lon="+ln;
+    $.ajax({
+            url:uvqURL,
+            method:"GET"
+            }).then(function(response){
+                $(currentUvindex).html(response.value);
+            });
+}
