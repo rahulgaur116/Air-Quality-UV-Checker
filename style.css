@@ -125,7 +125,7 @@ h3 {
 }
 section {
   color: rgb(18, 16, 18);
-  margin-bottom: ;
+  /* margin-bottom: ; */
   text-align: left;
 }
 form{
@@ -138,3 +138,25 @@ footer {border: 0.1px solid black;
     font-weight: <300>;
     font-style: normal;
 }
+
+
+.color-bar {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  margin-left: 10px;
+}
+
+/* Define the marker style */
+.marker {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* Define colors for the marker */
+.low { background-color: green; }
+.medium { background-color: yellow; }
+.high { background-color: red; }

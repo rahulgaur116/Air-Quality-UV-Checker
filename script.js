@@ -17,9 +17,6 @@ searchbtn.on("click", function() {
     var location = cityName.val();
     console.log(location);
 
-
-
-
     // Fetch current overall AQI data using Waqi API
     fetch(`https://api.waqi.info/feed/${location}/?token=${myapikey}`)
     .then(function(resp) {
@@ -44,10 +41,40 @@ searchbtn.on("click", function() {
 function displayPollutant(pollutantKey, element, iaqiData) {
     if (iaqiData[pollutantKey]) {
         element.text(iaqiData[pollutantKey].v);
+        
     } else {
         element.text(pollutantKey + " Level not Detected");
     }
+
+
 }
+// Update pollutant1 marker position and color
+function updatePollutant1Marker(pollutant1Value) {
+    var marker = document.getElementById("pollutant1-marker");
+    var barWidth = document.querySelector(".pollutant-bar").clientWidth;
+    
+    // Calculate the position of the marker based on the pollutant1 value
+    var markerPosition = (pollutant1Value / 10) * barWidth; // Adjust the division factor based on your scale
+    
+    // Update marker position
+    marker.style.left = markerPosition + "px";
+    
+    // Update marker color based on pollutant1 value
+    if (pollutant1Value < 50) {
+        marker.style.backgroundColor = "#00e400"; // Good (Green)
+    } else if (pollutant1Value < 100) {
+        marker.style.backgroundColor = "#ff9900"; // Moderate (Yellow)
+    } else if (pollutant1Value < 150) {
+        marker.style.backgroundColor = "#ff0000"; // Unhealthy for Sensitive Groups (Orange)
+    } else if (pollutant1Value < 200) {
+        marker.style.backgroundColor = "#99004d"; // Unhealthy (Purple)
+    } else {
+        marker.style.backgroundColor = "#7e0023"; // Very Unhealthy (Maroon)
+    }
+}
+
+// Call the function to update pollutant1 marker based on the value
+updatePollutant1Marker(pollutant1); // Example value, you can pass the actual pollutant1 
 
 // UV Check and Cloud Cover //
 var apiKey = "1b18ce13c84e21faafb19c931bb29331";
