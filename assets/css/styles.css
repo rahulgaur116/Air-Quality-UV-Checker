@@ -7,7 +7,7 @@
 
 header {
   
-  }
+}
 
 div.class.row{
   font-family: "Work Sans", sans-serif;
@@ -82,17 +82,59 @@ h3 {
   font-style: normal;
   
 }
-section { 
-  color: rgb(167, 67, 149);
-  margin-bottom: ;
+
+
+.AQI {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightcyan;
+  color: rgb(31, 83, 226);
   text-align: center;
- 
+  border-color: lightblue;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 20px 10px;
+  padding: 2px 2px;
+  
 }
 
-footer {border: 0.1px solid black;
+.UVI {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightcyan;
+  color: rgb(31, 83, 226);
+  text-align: center;
+  border-color: lightblue;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 20px 10px;
+  padding: 2px 2px;
+}
+
+.UVI p {
+  background-color:rgb(163, 238, 250);
+  padding: 15px 10px;
+  text-align: left;
+  margin: 3%; 
+  padding-right: 5%;
+  
+}
+
+.AQI p {
+  background-color:rgb(163, 238, 250);
+  padding: 15px 10px;
+  text-align: left;
+  margin: 3%; 
+  padding-right: 5%;
+
+}
+
+
+footer {
+  border: 0.1px solid black;
   background-color: lightblue;
   font-family: "Work Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <300>;
-    font-style: normal;
+  font-optical-sizing: auto;
+  font-weight: <300>;
+  font-style: normal;
 } 
