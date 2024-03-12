@@ -1,14 +1,140 @@
+*  {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <300>;
+    font-style: normal;
+}
+div.callout.large {
+  background-image:url(https://images.unsplash.com/photo-1466927593098-4d4aa7a2b2d8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+}
+div.class.row{
+  font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <300>;
+    font-style: normal;
+}
+.SearchBar {
+  position: flex;
+  top: 100px;
+  left: 50px;
+}
+input#location {
+  height: 30px;
+  width: 250px;
+}
+/* Air Quality */
 .forecast {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
-
-.forecast div {
-    width: 200px;
-    height: 200px;
-    background-color: lightblue;
-    text-align: center;
-    line-height: 100px;
-    border: 1px solid black;
+div.current-weather-container {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  text-align: center;
+  line-height: 100px;
+  border: 1px solid black;
 }
-
+/* UV */
+.current-weather-container {
+  border-color: lightgrey;
+  border-width: thin 0 thin thin;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 20px 0 0 20px;
+  padding: 0 0 12px 0;
+}
+.current-title-container {
+  display: flex;
+background-color: peachpuff;
+}
+.current-title {
+  font-size: 40px;
+  margin: 15px 0 20px 20px;
+}
+.current-weather-icon {
+  width: 80px;
+  height: 80px;
+}
+.current-temperature, .current-humidity, .current-wind-speed {
+  margin: 15px 20px;
+  font-size: 20px;
+}
+.current-uv-index {
+  font-size: 20px;
+  display: inline;
+  margin: 0 0 0 20px;
+}
+.current-number {
+  font-size: 20px;
+  display: inline;
+  color: white;
+  padding: 5px 10px;
+}
+/* Con't HTML  */
+div.medium-4.columns {
+  font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <300>;
+    font-style: normal;
+}
+nav {
+  float: right;
+  color: rgb(80, 4, 231);
+}
+body {
+  background-color: rgb(249, 249, 249);
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <300>;
+  font-style: ;
+}
+h1 {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <300>;
+  font-style: normal;
+}
+p.lead { color: hsl(233, 29%, 94%);
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <300>;
+  font-style: normal;
+}
+div.row.column.text-center{
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <300>;
+  font-style: normal;
+}
+ul {
+  background-color: lightblue;
+}
+h2 {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+h3 {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+section {
+  color: rgb(18, 16, 18);
+  margin-bottom: ;
+  text-align: left;
+}
+form{
+  text-align: left;
+}
+footer {border: 0.1px solid black;
+  background-color: lightblue;
+  font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <300>;
+    font-style: normal;
+}
