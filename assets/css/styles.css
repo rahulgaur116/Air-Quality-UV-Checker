@@ -219,3 +219,48 @@ footer {border: 0.1px solid black;
     font-weight: <300>;
     font-style: normal;
 } 
+
+.AQI {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightcyan;
+  color: rgb(31, 83, 226);
+  text-align: center;
+  border-color: lightblue;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 20px 10px;
+  padding: 2px 2px;
+}
+.UVI {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightcyan;
+  color: rgb(31, 83, 226);
+  text-align: center;
+  border-color: lightblue;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 20px 10px;
+  padding: 2px 2px;
+}
+.UVI p {
+  background-color:rgb(163, 238, 250);
+  padding: 15px 10px;
+  text-align: left;
+  margin: 3%;
+  padding-right: 5%;
+}
+.AQI p {
+  background-color:rgb(163, 238, 250);
+  padding: 15px 10px;
+  text-align: left;
+  margin: 3%;
+  padding-right: 5%;
+}
+
+
+
+
+
+
