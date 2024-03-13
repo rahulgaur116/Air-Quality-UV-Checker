@@ -1,39 +1,57 @@
-
-
-
+// Air Quality and Pollution API//
 var myapikey = "f09a8b987378f5c12242add6b4dd73f6243f9a8b";
-var locationinput = $("#location");
+var cityName = $("#location");
 var searchbtn = $("#search");
-var aqi = $("#aqi");
-var pm25 = $("#pm25");
+var pollutant1 = $("#PM25");
+var pollutant2 = $("#SO2");
+var pollutant3 = $("#NO2");
+
+searchbtn.on("click", function() {
+    var location = cityName.val();
+    console.log(location);
+    currentWeatherSection(location);
+});
 
 // Event listener for search button click
 searchbtn.on("click", function() {
-    var location = locationinput.val();
-    console.log(location)
+    var location = cityName.val();
+    console.log(location);
+
+
+
 
     // Fetch current overall AQI data using Waqi API
     fetch(`https://api.waqi.info/feed/${location}/?token=${myapikey}`)
     .then(function(resp) {
+        if (!resp.ok) {
+            throw new Error('Network response was not ok');
+        }
         return resp.json();
     })
     .then(function(data) {
-        console.log(data);
-        aqi.text(data.data.aqi);
+        console.log(data.data);
+     // Check statement to look for the data using element name and see if it exists for current location
+        if (data.data && data.data.iaqi) {
+            displayPollutant("pm25", pollutant1, data.data.iaqi);
+            displayPollutant("so2", pollutant2, data.data.iaqi);
+            displayPollutant("no2", pollutant3, data.data.iaqi);
+        }
+    })
+    .catch(function(error) {
+        console.error('Error fetching data:', error);
     });
-    
-     // Fetch current PM25 data using Waqi API
-     fetch(`https://api.waqi.info/feed/${location}/?token=${myapikey}`)
-     .then(function(resp) {
-         return resp.json();
-     })
-     .then(function(data) {
-         console.log(data);
-         pm25.text(data.data.iaqi.pm25.v);
-     });
 });
+function displayPollutant(pollutantKey, element, iaqiData) {
+    if (iaqiData[pollutantKey]) {
+        element.text(iaqiData[pollutantKey].v);
+    } else {
+        element.text(pollutantKey + " Level not Detected");
+    }
+}
 
 // JS for UV Checker 
+=======
+// UV Check and Cloud Cover //
 var apiKey = "1b18ce13c84e21faafb19c931bb29331";
 var currentUvindex = $("#uv-Index");
 var cityName = $("#location");
@@ -42,6 +60,7 @@ var maxTemp = $("#max-temp");
 var cityLat;
 var cityLon;
 
+=======
 var currentWeatherSection = function(cityName) {
     // get and use data from open weather current weather api end point
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
@@ -56,6 +75,7 @@ var currentWeatherSection = function(cityName) {
         });
 };
 
+=======
 var fetchWeatherData = function(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
         .then(function(response) {
@@ -70,6 +90,10 @@ var fetchWeatherData = function(lat, lon) {
             cloudsIndex.text(data.current.clouds);
             maxTemp.text(data.daily[0].temp.max + " F");
 
+            var currentUvIndex = $("#current-uv-index");
+            currentUvIndex.text("UV Index: " + data.current.uvi);
+
+=======
             var currentUvIndex = $("#current-uv-index");
             currentUvIndex.text("UV Index: " + data.current.uvi);
 
@@ -88,3 +112,4 @@ $("#search").on("click", function() {
 });
 
 
+=======
