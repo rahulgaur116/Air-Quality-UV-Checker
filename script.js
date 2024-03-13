@@ -1,25 +1,18 @@
-// Air Quality and Pollution API//
 var myapikey = "f09a8b987378f5c12242add6b4dd73f6243f9a8b";
 var cityName = $("#location");
 var searchbtn = $("#search");
 var pollutant1 = $("#PM25");
 var pollutant2 = $("#SO2");
 var pollutant3 = $("#NO2");
-
 searchbtn.on("click", function() {
     var location = cityName.val();
     console.log(location);
     currentWeatherSection(location);
 });
-
 // Event listener for search button click
 searchbtn.on("click", function() {
     var location = cityName.val();
     console.log(location);
-
-
-
-
     // Fetch current overall AQI data using Waqi API
     fetch(`https://api.waqi.info/feed/${location}/?token=${myapikey}`)
     .then(function(resp) {
@@ -48,7 +41,6 @@ function displayPollutant(pollutantKey, element, iaqiData) {
         element.text(pollutantKey + " Level not Detected");
     }
 }
-
 // UV Check and Cloud Cover //
 var apiKey = "1b18ce13c84e21faafb19c931bb29331";
 var currentUvindex = $("#uv-Index");
