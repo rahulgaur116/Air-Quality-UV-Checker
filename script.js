@@ -49,6 +49,8 @@ function displayPollutant(pollutantKey, element, iaqiData) {
     }
 }
 
+// JS for UV Checker 
+=======
 // UV Check and Cloud Cover //
 var apiKey = "1b18ce13c84e21faafb19c931bb29331";
 var currentUvindex = $("#uv-Index");
@@ -57,6 +59,8 @@ var cloudsIndex = $("#clouds-Index");
 var maxTemp = $("#max-temp");
 var cityLat;
 var cityLon;
+
+=======
 var currentWeatherSection = function(cityName) {
     // get and use data from open weather current weather api end point
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
@@ -70,6 +74,8 @@ var currentWeatherSection = function(cityName) {
             fetchWeatherData(cityLat, cityLon);
         });
 };
+
+=======
 var fetchWeatherData = function(lat, lon) {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&units=imperial&appid=${apiKey}`)
         .then(function(response) {
@@ -83,8 +89,14 @@ var fetchWeatherData = function(lat, lon) {
             currentUvindex.text(data.current.uvi);
             cloudsIndex.text(data.current.clouds);
             maxTemp.text(data.daily[0].temp.max + " F");
+
             var currentUvIndex = $("#current-uv-index");
             currentUvIndex.text("UV Index: " + data.current.uvi);
+
+=======
+            var currentUvIndex = $("#current-uv-index");
+            currentUvIndex.text("UV Index: " + data.current.uvi);
+
             var currentNumber = $("#current-number");
             currentNumber.text(data.current.uvi);
         })
@@ -92,3 +104,12 @@ var fetchWeatherData = function(lat, lon) {
             console.log("Error fetching data:", error);
         });
 };
+
+$("#search").on("click", function() {
+    var location = cityName.val();
+    console.log(location);
+    currentWeatherSection(location);
+});
+
+
+=======

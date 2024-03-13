@@ -4,6 +4,8 @@
     font-weight: <300>;
     font-style: normal;
 }
+
+=======
 div.callout.large {
   background-image:url(https://images.unsplash.com/photo-1466927593098-4d4aa7a2b2d8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 }
@@ -155,6 +157,64 @@ h3 {
   font-weight: <weight>;
   font-style: normal;
 }
+
+
+
+.AQI {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightcyan;
+  color: rgb(31, 83, 226);
+  text-align: center;
+  border-color: lightblue;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 20px 10px;
+  padding: 2px 2px;
+  
+}
+
+.UVI {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: lightcyan;
+  color: rgb(31, 83, 226);
+  text-align: center;
+  border-color: lightblue;
+  border-width: 10px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 20px 10px;
+  padding: 2px 2px;
+}
+
+.UVI p {
+  background-color:rgb(163, 238, 250);
+  padding: 15px 10px;
+  text-align: left;
+  margin: 3%; 
+  padding-right: 5%;
+  
+}
+
+.AQI p {
+  background-color:rgb(163, 238, 250);
+  padding: 15px 10px;
+  text-align: left;
+  margin: 3%; 
+  padding-right: 5%;
+
+}
+
+
+footer {
+  border: 0.1px solid black;
+  background-color: lightblue;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <300>;
+  font-style: normal;
+} 
+=======
 h4{
 text-align: center;
 }
